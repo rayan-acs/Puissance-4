@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+body {
+  font-family: "Luckiest Guy", cursive;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+td:hover {
+  opacity: 0.5;
+}
+
+#game {
+  margin-top: 35px;
+}
+
+.player-1 {
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  border-radius: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */
