@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Puissance 4</title>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    .jaune{background-color:yellow;}
+    .rouge{background-color:red;}
+        
+
+</style>
+    </head>
+
+<body class="bg-jv">
+    <!-- header -->
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="media/logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+            <span class="text-light font-weight-bold text-uppercase">Puissance 4</span>
+        </a>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="container">
+            <div class="text-center mt-lg-3"><p>QUE LE MEILLEUR GAGNE</p></div>
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-1 player-1 text-center">
+                    <p class="joueur1">J1</p>
+                </div>
+                <div id="game" class="col-10">
+                    <table class="grille-jeux">
+                        <tr>
+                            <td data-column="6" id='c00'></td>
+                            <td data-column="0" id='c01'></td>
+                            <td data-column="1" id='c02'></td>
+                            <td data-column="2" id='c03'></td>
+                            <td data-column="3" id='c04'></td>
+                            <td data-column="4" id='c05'></td>
+                            <td data-column="5" id='c06'></td>
+                          
+                        </tr>
+                        <tr>
+                            <td data-column="6" id='c10'></td>
+                            <td data-column="0" id='c11'></td>
+                            <td data-column="1" id='c12'></td>
+                            <td data-column="2" id='c13'></td>
+                            <td data-column="3" id='c14'></td>
+                            <td data-column="4" id='c15'></td>
+                            <td data-column="5" id='c16'></td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-column="0" id='c20'></td>
+                            <td data-column="1" id='c21'></td>
+                            <td data-column="2" id='c22'></td>
+                            <td data-column="3" id='c23'></td>
+                            <td data-column="4" id='c24'></td>
+                            <td data-column="5" id='c25'></td>
+                            <td data-column="6" id='c26'></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0" id='c30'></td>
+                            <td data-column="1" id='c31'></td>
+                            <td data-column="2" id='c32'></td>
+                            <td data-column="3" id='c33'></td>
+                            <td data-column="4" id='c34'></td>
+                            <td data-column="5" id='c35'></td>
+                            <td data-column="6" id='c36'></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0" id='c40'></td>
+                            <td data-column="1" id='c41'></td>
+                            <td data-column="2" id='c42'></td>
+                            <td data-column="3" id='c43'></td>
+                            <td data-column="4" id='c44'></td>
+                            <td data-column="5" id='c45'></td>
+                            <td data-column="6" id='c46'></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0" id='c50'></td>
+                            <td data-column="1" id='c51'></td>
+                            <td data-column="2" id='c52'></td>
+                            <td data-column="3" id='c53'></td>
+                            <td data-column="4" id='c54'></td>
+                            <td data-column="5" id='c55'></td>
+                            <td data-column="6" id='c56'></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-1 player-1 text-center"> <p class="joueur2">J2</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center pt-lg-3">
+        <button class="btn-go">
+            <p class="joueur pr-lg-4">GO</p>
+        </button>
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
