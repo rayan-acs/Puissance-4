@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
-
+body{
+    background-color:  #4791FF!important;
+}
 p{
     font-family: 'Luckiest Guy', cursive;
-    font-size: 30px;
+    font-size: 40px;
+    color: #FFC107;
 }
 
 table{
@@ -18,7 +21,7 @@ td:hover{
     opacity: 0.5;
 }
 #game{
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .player-1{
     height: 200px;
