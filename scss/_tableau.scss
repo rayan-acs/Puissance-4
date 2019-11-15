@@ -2,10 +2,12 @@ body{
     background-color:  #4791FF!important;
     
 }
-p{
+.go{
     font-family: 'Luckiest Guy', cursive;
-    font-size: 40px;
-    color: #FFC107; 
+    font-size: 60px;
+    color: #FFC107;
+    text-shadow: 2px 2px orangered;
+
 }
 
 table{
@@ -13,10 +15,9 @@ table{
 }
 td{
     background-color: blue;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
-
 }
 td:hover{
     opacity: 0.5;
@@ -31,9 +32,27 @@ td:hover{
     border-radius: 25px;
 }
 .joueur{
+    font-family: 'Luckiest Guy', cursive;
     font-size: 15px;
     color: white;
     padding-top: 20px;
+}
+.btn-go{
+    background-color: #FFC107 !important;
+    box-shadow: 2px 2px orangered !important;
+
+}
+.round-white {
+    background-color: white;
+
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
 }
 
 

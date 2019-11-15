@@ -1,12 +1,24 @@
+/* FONT IMPORT */
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+/* BACKGROUND SYSTEM */
+.bg-light-dark {
+  background-color: #343a40c7;
+}
+
+.bg-jv {
+  background-image: url("../media/bg-jv.png");
+  background-repeat: repeat;
+}
+
 body {
   background-color: #4791FF !important;
 }
 
-p {
+.go {
   font-family: "Luckiest Guy", cursive;
-  font-size: 40px;
+  font-size: 60px;
   color: #FFC107;
+  text-shadow: 2px 2px orangered;
 }
 
 table {
@@ -15,8 +27,8 @@ table {
 
 td {
   background-color: blue;
-  height: 100px;
-  width: 100px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
 }
 
@@ -36,9 +48,27 @@ td:hover {
 }
 
 .joueur {
+  font-family: "Luckiest Guy", cursive;
   font-size: 15px;
   color: white;
   padding-top: 20px;
+}
+
+.btn-go {
+  background-color: #FFC107 !important;
+  box-shadow: 2px 2px orangered !important;
+}
+
+.round-white {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
 }
 
 html:root {
