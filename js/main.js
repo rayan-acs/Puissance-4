@@ -32,7 +32,7 @@ game.addEventListener('click', function (event) {
     afficherJoueurActif();
 
 
-    victoireColonne()
+    victoireLigne()
 })
 
 
@@ -109,6 +109,20 @@ function changementJoueur() {
 }
 
 
+function victoireLigne() {
+    var compteur = 0;
+    var ligne = clickedCellCoordX;
+    var colonne = clickedCellCoordY;
+    console.log("ligne : "+ ligne);
+    console.log("colonne : " +colonne) 
+ // console.log( "grille["+ ligne +"][colonne] && grille[ligne][" + colonne+1 +"] || grille[ligne][colonne-1]")
+//  grille[5].forEach(puissance4horizontal )
+ 
+//  function puissance4horizontal(item, index){
+//      console.log("puissance4", + item + index )
+//  }
+console.log(grille[ligne])
+}
 
 // function gagner()
 //     {
