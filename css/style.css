@@ -1,4 +1,15 @@
+/* FONT IMPORT */
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+/* BACKGROUND SYSTEM */
+.bg-light-dark {
+  background-color: #343a40c7;
+}
+
+.bg-jv {
+  background-image: url("../media/bg-jv.png");
+  background-repeat: repeat;
+}
+
 body {
   background-color: #4791FF !important;
 }
