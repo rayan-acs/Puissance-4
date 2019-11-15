@@ -1,3 +1,36 @@
+window.addEventListener('keydown',function(event)  {
+    console.log(event);
+    // si la touche correspond a la touche 82 "r" 
+    if (event.keyCode == 82) {
+        alert("r");
+        // on selectionne le body dans la liste de classe css "classList"
+         document.querySelector('.round-white').style.backgroundColor = "green";
+       console.log(vv)
+        document.td.classList.add("red");
+        document.td.classList.remove("yellow", "white");
+    }
+    else if (event.keyCode == 89) {
+        alert("y");
+        // alors ajoute moi la classe yellow au body
+        document.table.classList.add("yellow");
+        document.table.classList.remove("white", "red");
+    }
+    else {
+        // le remove me permet de retourner a l'état initial
+        document.table.classList.remove("yellow", "red");
+        document.table.classList.add("white");
+        console.log("test");
+    }
+});
+
+
+
+
+
+
+
+
+
 // class Puissance4 {
 //     /*
 //       Intialise un plateau de jeu de dimensions `rows` × `cols` (par défaut 6×7),
