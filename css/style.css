@@ -41,6 +41,20 @@ td:hover {
   padding-top: 20px;
 }
 
+html:root {
+  --blue: #4791ff;
+  --orange: #ff8d07;
+}
+
+.bg-light-dark {
+  background-color: #343a40c7;
+}
+
+.bg-jv {
+  background-image: url("../media/bg-jv.png");
+  background-repeat: repeat;
+}
+
 /* BOUNCING TEXT EFFECT */
 .animated-bounce {
   -webkit-animation-duration: 1.5s;
