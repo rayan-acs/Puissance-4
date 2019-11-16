@@ -113,15 +113,31 @@ function victoireLigne() {
     var compteur = 0;
     var ligne = clickedCellCoordX;
     var colonne = clickedCellCoordY;
+    if (joueurActif == 1) {
+        couleur ='rouge'}
+        else if  (joueurActif ==2 ) {
+            couleur ='jaune'}
+
+
     console.log("ligne : "+ ligne);
     console.log("colonne : " +colonne) 
  // console.log( "grille["+ ligne +"][colonne] && grille[ligne][" + colonne+1 +"] || grille[ligne][colonne-1]")
-//  grille[5].forEach(puissance4horizontal )
- 
-//  function puissance4horizontal(item, index){
-//      console.log("puissance4", + item + index )
-//  }
-console.log(grille[ligne])
+
+
+//alert(grille[ligne][colonne])
+
+//si quatres pions alignés de la même couleur horizontalement
+if(
+    ((grille[ligne][0] == couleur  ) && (grille[ligne][1] == couleur) && (grille[ligne][2] ==couleur) && (grille[ligne][3]== couleur)) ||
+    ((grille[ligne][1] == couleur ) && (grille[ligne][2]== couleur) && (grille[ligne][3]== couleur) && (grille[ligne][4] ==couleur)) ||
+    ((grille[ligne][2]== couleur ) && (grille[ligne][3]== couleur) && (grille[ligne][4]== couleur) && (grille[ligne][5] == couleur)) ||
+    ((grille[ligne][3] == couleur) && (grille[ligne][4] == couleur) && (grille[ligne][5]== couleur) && (grille[ligne][6]  == couleur) )
+    
+   ) {
+    console.log("4 pions alignés");
+    alert("le joueur"+ couleur + "gagne")
+}
+
 }
 
 // function gagner()
