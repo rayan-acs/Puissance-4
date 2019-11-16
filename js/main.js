@@ -32,7 +32,8 @@ game.addEventListener('click', function (event) {
     afficherJoueurActif();
 
 
-    victoireLigne()
+    victoireLigne();
+    victoireColonne()
 })
 
 
@@ -110,7 +111,7 @@ function changementJoueur() {
 
 
 function victoireLigne() {
-    var compteur = 0;
+    
     var ligne = clickedCellCoordX;
     var colonne = clickedCellCoordY;
     if (joueurActif == 1) {
@@ -140,6 +141,28 @@ if(
 
 }
 
+function victoireColonne(){
+    var ligne = clickedCellCoordX;
+    var colonne = clickedCellCoordY;
+    if (joueurActif == 1) {
+        couleur ='rouge'}
+        else if  (joueurActif ==2 ) {
+            couleur ='jaune'}
+
+            if(
+                ((grille[0][colonne] == couleur  ) && (grille[1][colonne] == couleur) && (grille[2][colonne] ==couleur) && (grille[3][colonne]== couleur)) ||
+                ((grille[1][colonne] == couleur ) && (grille[2][colonne]== couleur) && (grille[3][colonne]== couleur) && (grille[4][colonne] ==couleur)) ||
+                ((grille[2][colonne]== couleur ) && (grille[3][colonne]== couleur) && (grille[4][colonne]== couleur) && (grille[5][colonne] == couleur)) ||
+                ((grille[3][colonne] == couleur) && (grille[4][colonne] == couleur) && (grille[5][colonne]== couleur) && (grille[6][colonne]  == couleur) )
+                
+               ) {
+                console.log("4 pions alignés");
+                alert("le joueur "+ couleur + "gagne vertical")
+            }
+
+
+
+}
 // function gagner()
 //     {
 // console.log('winnnner')
