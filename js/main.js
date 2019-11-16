@@ -28,10 +28,11 @@ game.addEventListener('click', function (event) {
 
     pion();
     color();
-    changementJoueur(); 
+    changementJoueur();
     afficherJoueurActif();
 
 
+    victoireLigne();
     victoireColonne()
 })
 
@@ -109,10 +110,88 @@ function changementJoueur() {
 }
 
 
+function victoireLigne() {
 
+    var ligne = clickedCellCoordX;
+    var colonne = clickedCellCoordY;
+    if (joueurActif == 1) {
+        couleur = 'rouge'
+    } else if (joueurActif == 2) {
+        couleur = 'jaune'
+    }
+
+
+    console.log("ligne : " + ligne);
+    console.log("colonne : " + colonne)
+    // console.log( "grille["+ ligne +"][colonne] && grille[ligne][" + colonne+1 +"] || grille[ligne][colonne-1]")
+
+
+    //alert(grille[ligne][colonne])
+
+    //si quatres pions alignés de la même couleur horizontalement
+    // if(
+    //     ((grille[ligne][0] == couleur  ) && (grille[ligne][1] == couleur) && (grille[ligne][2] ==couleur) && (grille[ligne][3]== couleur)) ||
+    //     ((grille[ligne][1] == couleur ) && (grille[ligne][2]== couleur) && (grille[ligne][3]== couleur) && (grille[ligne][4] ==couleur)) ||
+    //     ((grille[ligne][2]== couleur ) && (grille[ligne][3]== couleur) && (grille[ligne][4]== couleur) && (grille[ligne][5] == couleur)) ||
+    //     ((grille[ligne][3] == couleur) && (grille[ligne][4] == couleur) && (grille[ligne][5]== couleur) && (grille[ligne][6]  == couleur) )
+
+    //    ) {
+    //     console.log("4 pions alignés");
+    //     alert("le joueur"+ couleur + "gagne")
+    // }
+
+
+
+    var n = 0;
+
+    while (n < 3) {
+
+        if ((grille[ligne][n] == couleur) && (grille[ligne][n + 1] == couleur) && (grille[ligne][n + 2] == couleur) && (grille[ligne][n + 3] == couleur)) {
+            console.log("4 pions alignés calcul avec boucle");
+            alert("le joueur" + couleur);
+
+            break;
+        }
+        n++;
+    }
+
+
+
+
+}
+
+function victoireColonne() {
+    var ligne = clickedCellCoordX;
+    var colonne = clickedCellCoordY;
+    if (joueurActif == 1) {
+        couleur = 'rouge'
+    } else if (joueurActif == 2) {
+        couleur = 'jaune'
+    }
+
+
+
+    var n = 0;
+    while (n < 3) {
+        if ((grille[n][colonne] == couleur) && (grille[n+1][colonne] == couleur) && (grille[n+2][colonne] == couleur) && (grille[n+3][colonne] == couleur)) {
+
+
+            console.log("4 pions alignés calcul avec boucle");
+            alert("le joueur" + couleur);
+
+            break;
+        }
+        n++;
+
+
+    }
+
+
+
+
+}
 // function gagner()
 //     {
 // console.log('winnnner')
 
 // }
-
