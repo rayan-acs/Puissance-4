@@ -11,9 +11,11 @@ for (var i = 0; i < 6; i++) {
         grille[i][j] = "vide";
     }
 }
+console.log(grille)
 var joueurActif;
 
 var clickedCellCoordX;
+//var lign;
 var game = document.querySelector('.grille-jeux');
 
 game.addEventListener('click', function (event) {
@@ -23,7 +25,8 @@ game.addEventListener('click', function (event) {
     clickedCellName = event.target.id;
     console.log(clickedCellName);
     clickedCellCoordY = parseInt(clickedCellName[2]); // 2nd param id
-    console.log(clickedCellCoordY);
+    lignX = parseInt(clickedCellName[1]);
+    //  console.log("ligne ====" + lign);
 
 
     pion();
@@ -31,9 +34,11 @@ game.addEventListener('click', function (event) {
     changementJoueur();
     afficherJoueurActif();
 
-
+  //  victoireDiag1();
+    victoireDiag2();
     victoireLigne();
     victoireColonne()
+    //victoireDiag2('+', ' +', '-', '-');
 })
 
 
@@ -148,7 +153,7 @@ function victoireLigne() {
 
         if ((grille[ligne][n] == couleur) && (grille[ligne][n + 1] == couleur) && (grille[ligne][n + 2] == couleur) && (grille[ligne][n + 3] == couleur)) {
             console.log("4 pions alignés calcul avec boucle");
-            alert("le joueur" + couleur);
+             alert("le joueur" + couleur);
 
             break;
         }
@@ -161,7 +166,7 @@ function victoireLigne() {
 }
 
 function victoireColonne() {
-    var ligne = clickedCellCoordX;
+    var ligne = lignX;
     var colonne = clickedCellCoordY;
     if (joueurActif == 1) {
         couleur = 'rouge'
@@ -173,11 +178,11 @@ function victoireColonne() {
 
     var n = 0;
     while (n < 3) {
-        if ((grille[n][colonne] == couleur) && (grille[n+1][colonne] == couleur) && (grille[n+2][colonne] == couleur) && (grille[n+3][colonne] == couleur)) {
+        if ((grille[n][colonne] == couleur) && (grille[n + 1][colonne] == couleur) && (grille[n + 2][colonne] == couleur) && (grille[n + 3][colonne] == couleur)) {
 
 
             console.log("4 pions alignés calcul avec boucle");
-            alert("le joueur" + couleur);
+              alert("le joueur" + couleur);
 
             break;
         }
@@ -193,5 +198,179 @@ function victoireColonne() {
 // function gagner()
 //     {
 // console.log('winnnner')
+
+// }
+
+function victoireDiag1() {
+
+    clickedCellElmt = document.getElementById(event.target.id);
+    clickedCellName = event.target.id;
+    console.log(clickedCellName);
+    colonne = parseInt(clickedCellName[2]); // 2nd param id
+    lign = parseInt(clickedCellName[1]);
+
+    if (joueurActif == 1) {
+        couleur = 'rouge';
+    } else if (joueurActif == 2) {
+        couleur = 'jaune';
+    }
+    console.log(lign)
+
+    var nbr = 0;
+
+    var i = 0;
+    var y = 0;
+    // sens down droite vers gauche
+    while (
+        (grille[lign - i][colonne + y] == couleur) &&
+        ((lign - i) <= 0 || (colonne + y) <= 6)
+    ) {
+        console.log('up ' + nbr);
+        //  console.log('i= '+ i + 'et y= ' + y)
+
+        nbr++; //cellule  superiieur
+        console.log("nombre " + nbr)
+        i++;
+        y++;
+    }
+
+
+
+    var m = 0;
+    var n = 0;
+    var nbr2 = 0;
+
+
+    while (
+        (grille[lign + m][colonne - n] == couleur) &&
+        ((lign + m) < 6 || (colonne - n) > 0)
+    ) {
+
+
+        nbr2++; //cellule  superiieur
+        console.log('up-d ' + nbr2);
+        n++;
+        m++;
+
+
+    }
+
+    if (nbr == 4 || nbr2 == 4 || (nbr + nbr2) == 4) {
+        alert("winner")
+    }
+
+}
+
+
+
+
+function  victoireDiag2() {
+
+    clickedCellElmt = document.getElementById(event.target.id);
+    clickedCellName = event.target.id;
+    console.log(clickedCellName);
+    colonne = parseInt(clickedCellName[2]); // 2nd param id
+    lign = parseInt(clickedCellName[1]);
+
+    if (joueurActif == 1) {
+        couleur = 'rouge';
+    } else if (joueurActif == 2) {
+        couleur = 'jaune';
+    }
+    console.log(lign)
+
+    var nbr = 0;
+
+    var i = 0;
+    var y = 0;
+    // sens down droite vers gauche
+    while (
+        (grille[lign + i][colonne + y] == couleur) &&
+        ((lign - i) <= 5 || (colonne + y) <= 6)
+    ) {
+        console.log('up-diag2 ' + nbr);
+        //  console.log('i= '+ i + 'et y= ' + y)
+
+        nbr++; //cellule  superiieur
+        console.log("nombre " + nbr)
+        i++;
+        y++;
+    }
+
+
+
+    var m = 0;
+    var n = 0;
+    var nbr2 = 0;
+
+
+    while (
+        (grille[lign - m][colonne - n] == couleur) &&
+        ((lign + m)>=0 || (colonne - n) > 0)
+    ) {
+
+
+        nbr2++; //cellule  superiieur
+        console.log('up-2-dia2 ' + nbr2);
+        n++;
+        m++;
+
+
+    }
+
+    if (nbr == 4 || nbr2 == 4 || (nbr + nbr2) == 4) {
+        alert("winner")
+    }
+
+
+
+}
+
+
+
+// function victoireDiag2(up1, up2, down1, down2) {
+//     var lign = lignX;
+//     var colonne = clickedCellCoordY;
+//     if (joueurActif == 1) {
+//         couleur = 'rouge';
+//     } else if (joueurActif == 2) {
+//         couleur = 'jaune';
+//     }
+
+
+//     var nbr = 0;
+
+//     var i = 0;
+//     var y = 0;
+
+//     while (
+//         (grille[lign + up1 + i][colonne + up2 + y] == couleur) &&
+//         ((lign + up1 + i) <= 5 || (colonne + up2 + y) >= 0)
+//     ) {
+//         console.log('up ' + nbr);
+//         nbr++; //cellule  superiieur
+//         i++;
+//         y++;
+//     }
+
+
+
+//     var i = 0;
+//     var y = 0;
+//     var nbr2 = 0;
+
+
+//     while ((grille[lign + down1 + i][colonne + down2 + y] == couleur) && ((lign + down1 + i) >= 0 || (colonne + down2 + y) >= 6)) {
+
+
+//         nbr2++; //cellule  superiieur
+//         console.log('up-down ' + nbr2);
+//         i++;
+//         y++;
+
+//     }
+//     if (nbr === 3 || nbr2 === 4 || (nbr + nbr2) === 4) {
+//         alert("winner")
+//     }
 
 // }
