@@ -10,16 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<style>
-    .jaune{background-color:yellow;}
-    .rouge{background-color:red;}
-        
-
-</style>
     </head>
 
-<body class="bg-jv">
+<body class="bg-jv-blur">
     <!-- header -->
     <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="index.html">
@@ -30,12 +23,14 @@
     
     <div class="container-fluid">
         <div class="container">
-            <div class="text-center mt-lg-3 go"><p>QUE LE MEILLEUR GAGNE</p></div>
+            <div class="text-center mt-lg-3 go">
+                <p>QUE LE MEILLEUR GAGNE</p>
+            </div>
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-1 player text-center">
+                <div class="col-10 col-sm-1 col-md-1 col-lg-1 player text-center mb-3 mb-sm-0 mb-md-0 mb-lg-0">
                     <p class="joueur1">J1</p>
                 </div>
-                <div id="game" class="col-10">
+                <div id="game" class="col-12 col-sm-10 col-md-10 col-lg-10">
                     <table class="grille-jeux">
                         <tr>
                             <td data-column="6" id='c00'></td>
@@ -95,11 +90,13 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-1 player text-center"> <p class="joueur2">J2</p></div>
+                <div class="col-10 col-sm-1 col-md-1 col-lg-1 player text-center mt-3 mt-sm-0 mt-md-0 mt-lg-0">
+                    <p class="joueur2">J2</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="text-center pt-lg-3">
+    <div class="container-fluid text-center pt-lg-3">
         <button class="btn-go">
             <p class="joueur pr-lg-4 pl-lg-4">GO</p>
         </button>
