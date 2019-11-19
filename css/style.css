@@ -1,9 +1,15 @@
 /* FONT IMPORT */
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+/* COLOR SYSTEM */
+html:root {
+  --blue: #4791ff;
+  --orange: #ff8d07;
+  --light-dark: #343a40c7;
+}
+
 /* BACKGROUND SYSTEM */
-@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
 .bg-light-dark {
-  background-color: #343a40c7;
+  background-color: var(--light-dark);
 }
 
 .bg-jv {
@@ -11,26 +17,29 @@
   background-repeat: repeat;
 }
 
-body {
-  background-color: #4791FF !important;
+.bg-jv-blur {
+  background-image: url("../media/bg-jv-blur.png");
+  background-repeat: repeat;
 }
 
 .go {
   font-family: "Luckiest Guy", cursive;
   font-size: 60px;
   color: #FFC107;
-  text-shadow: 2px 2px orangered;
-  padding-top: 60px;
+  text-shadow: 3px 2px #ff9307;
 }
 
 table {
+  background-color: #0960bd;
   margin: 0 auto;
+  border-radius: 30px;
 }
 
 td {
-  background-color: blue;
-  height: 70px;
-  width: 70px;
+  background-color: #429ffd;
+  padding: 20px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
 }
 
@@ -45,7 +54,7 @@ td:hover {
 .player {
   height: 100px;
   width: 100px;
-  background-color: orangered;
+  background-color: #2b5fca;
   border-radius: 25px;
   box-shadow: 2px 4px rgba(27, 27, 27, 0.267) !important;
 }
@@ -79,32 +88,40 @@ td:hover {
   margin-top: 50px;
 }
 
-.round-white {
-  background-color: white;
+.rouge {
+  background-color: #f12d2d;
 }
 
-.red {
-  background-color: red;
+.jaune {
+  background-color: #f79f24;
 }
 
-.yellow {
-  background-color: yellow;
+@media (min-width: 768px) and (max-width: 991.98px) {
+  td {
+    height: 80px;
+    width: 80px;
+  }
 }
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .go {
+    font-size: 45px;
+  }
 
-html:root {
-  --blue: #4791ff;
-  --orange: #ff8d07;
+  td {
+    height: 60px;
+    width: 60px;
+  }
 }
+@media (max-width: 575.98px) {
+  .go {
+    font-size: 35px;
+  }
 
-.bg-light-dark {
-  background-color: #343a40c7;
+  td {
+    height: 60px;
+    width: 60px;
+  }
 }
-
-.bg-jv {
-  background-image: url("../media/bg-jv.png");
-  background-repeat: repeat;
-}
-
 /* BOUNCING TEXT EFFECT */
 .animated-bounce {
   -webkit-animation-duration: 1.5s;

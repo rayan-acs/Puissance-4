@@ -1,36 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
-
-body{
-    background-color:  #4791FF!important;
-    
-}
 .go{
     font-family: 'Luckiest Guy', cursive;
     font-size: 60px;
     color: #FFC107;
-    text-shadow: 2px 2px orangered;
-    padding-top: 60px;
+    text-shadow: 3px 2px #ff9307;
 }
 
 table{
+    background-color: #0960bd;
     margin: 0 auto;
+    border-radius: 30px;
 }
+
 td{
-    background-color: blue;
-    height: 70px;
-    width: 70px;
+    background-color: #429ffd;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
 }
+
 td:hover{
     opacity: 0.5;
 }
+
 #game{
     margin-top: 10px;
 }
 .player{
     height: 100px;
     width: 100px;
-    background-color: orangered;
+    background-color: #2b5fca;
     border-radius: 25px;
     box-shadow: 2px 4px rgba(27, 27, 27, 0.267) !important;
 }
@@ -60,40 +59,47 @@ td:hover{
     width: 100px;
     margin-top: 50px;
 }
-.round-white {
-    background-color: white;
+
+.rouge {
+    background-color: #f12d2d;
+}
+
+.jaune {
+    background-color: #f79f24;
+}
+
+@media (min-width: 1200px) {
 
 }
 
-.red {
-    background-color: red;
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
 }
 
-.yellow {
-    background-color: yellow;
+@media (min-width: 768px) and (max-width: 991.98px) {
+    td{
+        height: 80px;
+        width: 80px;
+    }
+
 }
 
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .go{
+        font-size: 45px;
+    }
+    td{
+        height: 60px;
+        width: 60px;
+    }
+}
 
-
-
-// #game table {
-//     border: 3px blue outset;
-//     background-color: blue;
-// }
-// #game td {
-//     width: 2cm;
-//     height: 2cm;
-//     margin: 0px;
-//     padding: 0px;
-//     border: 2px blue inset;
-//     border-radius: 2cm;
-//     background-color: white;
-//     cursor: pointer;
-// }
-// #game td.player1 {
-//     background-color: red;
-// }
-// #game td.player2 {
-//     background-color: yellow;
-    
-// }
+@media (max-width: 575.98px) {
+    .go{
+        font-size: 35px;
+    }
+    td{
+        height: 60px;
+        width: 60px;
+    }
+}
