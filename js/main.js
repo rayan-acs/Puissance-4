@@ -315,7 +315,8 @@ function gagner(item) {
    game.classList.toggle("d-none")
    resultat.classList.toggle("d-none");
    resultat.innerHTML ='<h2> le joueur ' + item + 'gagne la partie </h2>';
-   document.getAnimations.classList.circle
+   document.querySelector(".azerty").classList.toggle("animation")
+   document.querySelector(".azerty").classList.toggle("circle")
    
 }
 
