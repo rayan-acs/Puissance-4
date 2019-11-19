@@ -22,13 +22,7 @@ html:root {
   background-repeat: repeat;
 }
 
-.go {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 60px;
-  color: #FFC107;
-  text-shadow: 3px 2px #ff9307;
-}
-
+/* TABLE SYSTEM */
 table {
   background-color: #0960bd;
   margin: 0 auto;
@@ -49,6 +43,13 @@ td:hover {
 
 #game {
   margin-top: 10px;
+}
+
+.go {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 60px;
+  color: #FFC107;
+  text-shadow: 3px 2px #ff9307;
 }
 
 .player {
@@ -80,6 +81,7 @@ td:hover {
   padding-top: 20px;
 }
 
+/* BOUTON RELOAD GAME */
 .btn-go {
   background-color: #ffc107 !important;
   box-shadow: 2px 2px rgba(27, 27, 27, 0.267) !important;
@@ -88,6 +90,7 @@ td:hover {
   margin-top: 50px;
 }
 
+/* COINS COLORS */
 .rouge {
   background-color: #f12d2d;
 }
@@ -96,6 +99,7 @@ td:hover {
   background-color: #f79f24;
 }
 
+/* MEDIA QUERIES */
 @media (min-width: 768px) and (max-width: 991.98px) {
   td {
     height: 80px;
@@ -120,6 +124,10 @@ td:hover {
   td {
     height: 60px;
     width: 60px;
+  }
+
+  .player {
+    height: 50px;
   }
 }
 /* BOUNCING TEXT EFFECT */
