@@ -56,7 +56,6 @@ td:hover{
     box-shadow: 2px 2px rgba(27, 27, 27, 0.267) !important;
     border-radius: 15px;
     width: 80%;
-    margin-top: 50px;
 }
 
 /* COINS COLORS */
@@ -101,11 +100,17 @@ td:hover{
         font-size: 35px;
     }
     td{
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
     }
     .player{
         height: 50px;
     }
-    
+    .btn-go{
+        width: 90%;
+    }
+    .joueur{
+        font-size: 1.3rem;
+        padding-top: 20px;
+    }      
 }
