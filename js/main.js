@@ -1,3 +1,5 @@
+// puissance 4 js
+
 // definition de la grille en js
 
 var grille = new Array(6);
@@ -13,66 +15,64 @@ for (var i = 0; i < 6; i++) {
     }
 }
 console.log(grille)
+// declaration de variables
 var joueurActif;
-
 var clickedCellCoordX;
 var game = document.querySelector('.grille-jeux');
 var resultat = document.querySelector('.resultat');
 var btn = document.querySelector('.btn-go');
 
-btn.addEventListener('click', function(){
+// ecoute evenement sur le bouton,
+btn.addEventListener('click', function () {
     reset();
 })
 
-
+// ecoute evenent click sur la grille
 game.addEventListener('click', function (event) {
     console.log(grille)
     //console.table(grille)    
 
-
-   
     clickedCellElmt = document.getElementById(event.target.id);
     clickedCellName = event.target.id;
     console.log(clickedCellName);
     clickedCellCoordY = parseInt(clickedCellName[2]); // 2nd param id
-    lignX = parseInt(clickedCellName[1]);
-    
-
-
+    lignX = parseInt(clickedCellName[1]); //1st part (int) numerique
     pion();
     color();
     changementJoueur();
     afficherJoueurActif();
-   // ia();
+    //verification si victoire
     victoireDiag1();
     victoireDiag2();
     victoireLigne();
     victoireColonne()
-    
+
 })
 
 
-//  fonction appliquer valeur joueur
-
+//  fonction appliquer couleur au joueur
 function color() {
     var cc = '#c' + clickedCellCoordX + clickedCellCoordY;
     console.log(cc)
     if (joueurActif == 1) {
+        //ajout class name 'jaune' sur le html
         document.querySelector(cc).classList.add("jaune");
-
+        // ajout valeur sur la grille js
         grille[clickedCellCoordX][clickedCellCoordY] = "jaune";
-        console.log('grille[' + clickedCellCoordX + '][' + clickedCellCoordY + ']');
-    } else if (joueurActif == 2) {
-        document.querySelector(cc).classList.add("rouge");
 
+        //console.log('grille[' + clickedCellCoordX + '][' + clickedCellCoordY + ']');
+    } else if (joueurActif == 2) {
+        //ajout class name 'rouge' sur le html
+        document.querySelector(cc).classList.add("rouge");
+        // ajout valeur sur la grille js
         grille[clickedCellCoordX][clickedCellCoordY] = "rouge";
-        console.log('grille[' + clickedCellCoordX + '][' + clickedCellCoordY + ']');
+        //console.log('grille[' + clickedCellCoordX + '][' + clickedCellCoordY + ']');
 
     }
-    
+
 }
 //fonction pion 
-
+// defini valeur de X
 function pion() {
 
     if (grille[5][clickedCellCoordY] == 0) {
@@ -94,41 +94,45 @@ function pion() {
     console.log("clickedCellCoordY " + clickedCellCoordY)
 }
 
+
+// afficher le joueur actif
 function afficherJoueurActif() {
 
-    // if (win == false) {
+    //si joueur 1 - passe le 'name' du joueur 1 en jaune
+
     if (joueurActif == 1) {
         document.querySelector(".joueur1").style.color = "yellow";
         document.querySelector(".joueur2").style.color = "black";
 
+        // si joueur2 - passe le 'name' du joueur 2 en rouge
     } else if (joueurActif == 2) {
         document.querySelector(".joueur1").style.color = "black";
         document.querySelector(".joueur2").style.color = "red";
-    } else {
-        alert('le pc va exploser');
-    }
-    //  }
+    } // 
+
+
 }
 
-// fonction pour changement de joueur 
+
 
 var joueur = true;
 var joueurActif = 0;
 
-
+// fonction pour changement de joueur 
 function changementJoueur() {
     if (joueur == true) {
         joueurActif = 1;
         joueur = false;
     } else {
         joueurActif = 2;
-      //exit
-       // ia();
+        //exit
+        // ia();
         joueur = true;
     }
 }
 
-
+// les verifications partent de l'emplacement du dernier jeton
+//verifie si 4 pions alignée se suivent sur une ligne
 function victoireLigne() {
 
     var ligne = clickedCellCoordX;
@@ -142,32 +146,14 @@ function victoireLigne() {
 
     console.log("ligne : " + ligne);
     console.log("colonne : " + colonne)
-    // console.log( "grille["+ ligne +"][colonne] && grille[ligne][" + colonne+1 +"] || grille[ligne][colonne-1]")
-
-
-    //alert(grille[ligne][colonne])
-
-    //si quatres pions alignés de la même couleur horizontalement
-    // if(
-    //     ((grille[ligne][0] == couleur  ) && (grille[ligne][1] == couleur) && (grille[ligne][2] ==couleur) && (grille[ligne][3]== couleur)) ||
-    //     ((grille[ligne][1] == couleur ) && (grille[ligne][2]== couleur) && (grille[ligne][3]== couleur) && (grille[ligne][4] ==couleur)) ||
-    //     ((grille[ligne][2]== couleur ) && (grille[ligne][3]== couleur) && (grille[ligne][4]== couleur) && (grille[ligne][5] == couleur)) ||
-    //     ((grille[ligne][3] == couleur) && (grille[ligne][4] == couleur) && (grille[ligne][5]== couleur) && (grille[ligne][6]  == couleur) )
-
-    //    ) {
-    //     console.log("4 pions alignés");
-    //     alert("le joueur"+ couleur + "gagne")
-    // }
-
-
-
+    /// verifie sur la grille que 4 pions se suivent
     var n = 0;
 
     while (n < 4) {
 
         if ((grille[ligne][n] == couleur) && (grille[ligne][n + 1] == couleur) && (grille[ligne][n + 2] == couleur) && (grille[ligne][n + 3] == couleur)) {
-            console.log("4 pions alignés calcul avec boucle");
-            alert("le joueur" + couleur);
+            //console.log("4 pions alignés calcul avec boucle");
+            //alert("le joueur" + couleur);
             gagner(couleur)
             break;
         }
@@ -175,7 +161,7 @@ function victoireLigne() {
     }
 
 }
-
+// verification si 4 pion sont alignée dans une colonne
 function victoireColonne() {
     var ligne = lignX;
     var colonne = clickedCellCoordY;
@@ -191,18 +177,18 @@ function victoireColonne() {
 
 
             console.log("4 pions alignés calcul avec boucle");
-            alert("le joueur" + couleur);
+           // alert("le joueur" + couleur);
             gagner(couleur)
             break;
         }
         n++;
-   }
+    }
 
 
 }
 
 
-
+// verification  diagonale sens / 
 function victoireDiag1() {
 
     var ligne = clickedCellCoordX;
@@ -212,47 +198,49 @@ function victoireDiag1() {
     } else if (joueurActif == 2) {
         couleur = 'jaune'
     }
+    var nbr = 0
+    
+    // sens / de haut en bas
+    while (grille[ligne--][colonne++] == couleur && ligne >= 0 && colonne <= 6) {
 
-    var nbr = 0;
-    var i = 0;
-    var y = 0;
-    // sens down droite vers gauche
-    while (grille[ligne--][colonne++] == couleur &&  ligne >=0 && colonne <=6 ) {
-       
         nbr++; //cellule  superiieur
-        
         console.log('up ' + nbr);
- 
+
     }
 
 
     var ligne2 = clickedCellCoordX;
     var colonne2 = clickedCellCoordY;
     var nbr2 = 0;
-    //  console.log("la ligne dans diag vaut" + ligne);
 
-      
+
+
+    // sens / de bas en haut
     while (grille[ligne2++][colonne2--] == couleur && ligne2 < 6 && colonne2 > -1) {
 
-        console.log("la lingne dans diag vaut" + ligne2);
+       // console.log("la lingne dans diag vaut" + ligne2);
         nbr2++; //cellule  superiieur
-        console.log('up-d ' + nbr2);
-           
-        }
-    
-    console.log("dans diag1 nbr= "+nbr +"et nbr2 = "+ nbr2)
-    if (nbr == 3|| nbr2 == 3 ) {
-        alert("winner function diagonal1")
+       // console.log('up-d ' + nbr2);
+
+    }
+
+    //console.log("dans diag1 nbr= " + nbr + "et nbr2 = " + nbr2)
+
+    // si solution gagnante
+    if (nbr == 3 || nbr2 == 3) {
+       // alert("winner function diagonal1")
         gagner(couleur)
-    } else if (nbr + nbr2 ==5){alert("winner diago1 milieu")
-        gagner(couleur)}
+    } else if (nbr + nbr2 == 5) {
+       // alert("winner diago1 milieu")
+        gagner(couleur)
+    }
 
 
 }
 
 
 
-
+// verification du sens \
 function victoireDiag2() {
     var ligne = clickedCellCoordX;
     var colonne = clickedCellCoordY;
@@ -264,52 +252,47 @@ function victoireDiag2() {
 
     var nbr3 = 0;
 
-    var i = 0;
-    var y = 0;
-    // sens gauche droite up
+    // de haut en bas \
     while (grille[ligne++][colonne++] == couleur && ligne < 6 && colonne < 7) {
-
-
         nbr3++; //cellule  superiieur
-        console.log('up f2 ' + nbr3);
-
+       // console.log('up f2 ' + nbr3);
     }
 
-        var ligne2 = clickedCellCoordX;
-        var colonne2 = clickedCellCoordY;
-        var nbr4 = 0;
+    var ligne2 = clickedCellCoordX;
+    var colonne2 = clickedCellCoordY;
+    var nbr4 = 0;
 
-        while (grille[ligne2--][colonne2--] == couleur && ligne2 > -1 && colonne2 > -1) {
 
-            console.log("la ligne dans diag vaut" + ligne2);
-            nbr4++; //cellule  superiieur
-            console.log('up-d f2 ' + nbr4);
-
-       }
-        console.log("dans diag2 nbr3= "+nbr3 +"et nbr4 = "+ nbr4)
-        if (nbr3 == 3 || nbr4 == 3 ) {
-            alert("winner fn diag2");
-            gagner(couleur);
-        }
-        else if (nbr3 + nbr4 ==5){alert("winner diago2 milieu")
-        gagner(couleur)}
-
+    // sens \ de bas en haut
+    while (grille[ligne2--][colonne2--] == couleur && ligne2 > -1 && colonne2 > -1) {
+       // console.log("la ligne dans diag vaut" + ligne2);
+        nbr4++; //cellule  superiieur
+       // console.log('up-d f2 ' + nbr4);
+    }
+  //  console.log("dans diag2 nbr3= " + nbr3 + "et nbr4 = " + nbr4)
+    // si gagnant
+    if (nbr3 == 3 || nbr4 == 3) {
+        //alert("winner fn diag2");
+        gagner(couleur);
+    } else if (nbr3 + nbr4 == 5) {
+       // alert("winner diago2 milieu")
+        gagner(couleur);
     }
 
+}
 
-function reset(){
+// reset le jeu
+function reset() {
 
-    console.log('nouvellePartie');
+    //console.log('nouvellePartie');
     window.location.reload();
 }
 
-function newgame()
- {
+// function newgame() {
 
+// }
 
-
-
-}
+// fonction qui affiche du html si gagnant
 function gagner(item) {
    //
    game.classList.toggle("d-none")
@@ -319,52 +302,46 @@ function gagner(item) {
 }
 
 
-
-function ia(){
+/*
+function ia() {
 
     x = Math.floor(Math.random() * (6 - 0)) + 1;
     alert(x)
-    if (grille[0][x] == 0){
+    if (grille[0][x] == 0) {
         //cc= '#c' + 4 + clickedCellCoordY;
         if (grille[5][x] == 0) {
             grille[5][x] = 'rouge'
-            cc= '#c' + '5'+ x;
+            cc = '#c' + '5' + x;
 
             document.querySelector(cc).classList.add("rouge");
-        }
-       else if (grille[4][x] == 0) {
+        } else if (grille[4][x] == 0) {
             grille[4][x] = 'rouge'
-            cc= '#c' + '4'+ x;
+            cc = '#c' + '4' + x;
 
             document.querySelector(cc).classList.add("rouge");
-        
-        }
-      else  if (grille[3][x] == 0) {
+
+        } else if (grille[3][x] == 0) {
             grille[3][x] = 'rouge'
-            cc= '#c' + '3'+ x;
+            cc = '#c' + '3' + x;
 
             document.querySelector(cc).classList.add("rouge");
+        } else if (grille[2][x] == 0) {
+            cc = '#c' + '2' + x;
+
+            document.querySelector(cc).classList.add("rouge");
+            grille[2][x] = 'rouge'
+        } else if (grille[1][x] == 0) {
+            cc = '#c' + '1' + x;
+
+            document.querySelector(cc).classList.add("rouge");
+            grille[1][x] = 'rouge'
+        } else if (grille[0][x] == 0) {
+            cc = '#c' + '0' + x;
+
+            document.querySelector(cc).classList.add("rouge");
+            grille[0][x] = 'rouge'
         }
-      else  if (grille[2][x] == 0) {
-        cc= '#c' + '2'+ x;
 
-        document.querySelector(cc).classList.add("rouge");
-            grille[2][x] = 'rouge'}
-       else if (grille[1][x] == 0) {
-        cc= '#c' + '1'+ x;
-
-        document.querySelector(cc).classList.add("rouge");
-            grille[1][x] = 'rouge'}
-       else if (grille[0][x] == 0) {
-        cc= '#c' + '0'+ x;
-
-        document.querySelector(cc).classList.add("rouge");
-            grille[0][x] = 'rouge'}
-           
     }
-    
-  }
-    
 
-
-
+}*/
