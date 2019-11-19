@@ -60,6 +60,14 @@ td:hover {
   box-shadow: 2px 4px rgba(27, 27, 27, 0.267) !important;
 }
 
+.resulj1 {
+  font-family: "Luckiest Guy";
+}
+
+.resulj2 {
+  font-family: "Luckiest Guy";
+}
+
 .joueur {
   font-family: "Luckiest Guy", cursive;
   font-size: 25px;
@@ -71,14 +79,12 @@ td:hover {
   font-family: "Luckiest Guy", cursive;
   font-size: 25px;
   color: white;
-  padding-top: 20px;
 }
 
 .joueur2 {
   font-family: "Luckiest Guy", cursive;
   font-size: 25px;
   color: white;
-  padding-top: 20px;
 }
 
 /* BOUTON RELOAD GAME */
@@ -87,7 +93,6 @@ td:hover {
   box-shadow: 2px 2px rgba(27, 27, 27, 0.267) !important;
   border-radius: 15px;
   width: 80%;
-  margin-top: 50px;
 }
 
 /* COINS COLORS */
@@ -133,12 +138,29 @@ h2 {
   }
 
   td {
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
   }
 
   .player {
     height: 50px;
+  }
+
+  .btn-go {
+    width: 90%;
+  }
+
+  .joueur {
+    font-size: 1.3rem;
+    padding-top: 20px;
+  }
+
+  .resulj1 {
+    display: none;
+  }
+
+  .resulj2 {
+    display: none;
   }
 }
 /* BOUNCING TEXT EFFECT */

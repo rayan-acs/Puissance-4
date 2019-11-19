@@ -21,6 +21,15 @@ var clickedCellCoordX;
 var game = document.querySelector('.grille-jeux');
 var resultat = document.querySelector('.resultat');
 var btn = document.querySelector('.btn-go');
+ joueurUn = document.querySelector('.resulj1');
+ joueurDeux = document.querySelector('.resulj2');
+
+ console.log(joueurUn)
+
+joueurUnNum = 0;
+joueurDeuxNum= 0;
+joueurUn.innerHTML=joueurUnNum;
+joueurDeux.innerHTML=joueurDeuxNum;
 
 // ecoute evenement sur le bouton,
 btn.addEventListener('click', function () {
@@ -161,9 +170,10 @@ function victoireLigne() {
     }
 
 }
-// verification si 4 pion sont alignée dans une colonne
+// verification si 4 pions sont alignés dans une colonne
 function victoireColonne() {
-    var ligne = lignX;
+    // var ligne = lignX;
+    var ligne = clickedCellCoordX;
     var colonne = clickedCellCoordY;
     if (joueurActif == 1) {
         couleur = 'rouge'
@@ -198,8 +208,9 @@ function victoireDiag1() {
     } else if (joueurActif == 2) {
         couleur = 'jaune'
     }
-    var nbr = 0
-    
+
+    var nbr = 0;
+
     // sens / de haut en bas
     while (grille[ligne--][colonne++] == couleur && ligne >= 0 && colonne <= 6) {
 
@@ -285,7 +296,21 @@ function victoireDiag2() {
 function reset() {
 
     //console.log('nouvellePartie');
-    window.location.reload();
+
+   for (var i=0; i<6; i++){
+        for(var j=0; j<7; j++){
+            grille[i][j] = "0";
+           document.querySelector("#c" + i + j).classList.remove('jaune');
+           document.querySelector("#c" + i + j).classList.remove('rouge');
+        }   
+        
+}
+console.log(grille);
+ //masque html
+  resultat.classList.toggle("d-none");
+  //affiche la grille
+  game.classList.toggle("d-none");
+ 
 }
 
 // function newgame() {
@@ -294,12 +319,28 @@ function reset() {
 
 // fonction qui affiche du html si gagnant
 function gagner(item) {
-   //
-   game.classList.toggle("d-none")
-   resultat.classList.toggle("d-none");
-   resultat.innerHTML ='<h2> le joueur ' + item + ' gagne la partie </h2>';
-   
+    //compte nombre de parties gagnés
+    if (item == "rouge") {
+        console.log(joueurDeuxNum++)
+      g2= joueurDeuxNum++
+       joueurDeux.innerHTML=g2;
+
+    } else if (item == "jaune") {
+        g1= joueurUnNum++
+        joueurUn.innerHTML=g1;
+    }
+      
+    //masque la grille
+    game.classList.toggle("d-none");
+    //partie html
+    resultat.classList.toggle("d-none");
+    resultat.innerHTML = '<h2> le joueur ' + item + 'gagne la partie </h2>';
 }
+
+function cptJeton(){
+ 
+}
+
 
 
 /*

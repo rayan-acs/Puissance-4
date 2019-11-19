@@ -4,13 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Une partie de Puissance 4 ? Venez affronter vos amis sur notre nouveau jeu fraîchement développé ou bien mettez à l'épreuve notre IA spécialement conçue.">
+    <meta name="robots" content="all">
+    <meta name="author" content="Eric Aurélie Rodrigue Rayan">
+    <meta name="keywords" content="Jeu, Puissance 4, Javascript, Puiss4nce, Plateau, Multijoueur, Local, IA, Pions, Familiale, Enfant, Développement, Plateau">
+    <!-- Facebook -->
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="http://rayans.promo-vesoul33.codeur.online/puiss4nce/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Une partie de Puissance 4 ?">
+    <meta property="og:description" content="Venez affronter vos amis sur notre nouveau jeu fraîchement développé ou bien mettez à l'épreuve notre IA spécialement conçue.">
+    <meta property="og:site_name" content="Puiss4nce">
+    <meta property="og:image" content="http://rayans.promo-vesoul33.codeur.online/puiss4nce/media/thumbnail.jpg">
+    <meta property="og:image:width" content="380">
+    <meta property="og:image:height" content="380">
+    <meta property="og:image:alt" content="facebook_partage">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Une partie de Puissance 4 ?">
+    <meta name="twitter:description" content="Venez affronter vos amis sur notre nouveau jeu fraîchement développé ou bien mettez à l'épreuve notre IA spécialement conçue.">
+    <meta name="twitter:site" content="https://twitter.com/Puiss4nce">
+    <meta name="twitter:image" content="http://rayans.promo-vesoul33.codeur.online/puiss4nce/media/thumbnail.jpg">
+    <meta name="twitter:creator" content="Puiss4nce">
+  
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Puissance 4</title>
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+    <title>PUISS4NCE</title>
+    
     </head>
 
 <body class="bg-jv-blur">
@@ -21,16 +45,18 @@
             <span class="text-light font-weight-bold text-uppercase"></span>
         </a>
     </nav>
-        
+    
     <div class="container-fluid">
         <div class="container">
-            <div class="text-center mt-lg-3"><p>QUE LE MEILLEUR GAGNE</p></div>
+            <div class="text-center mt-4 mb-4 go">
+                <p><img src="media/title-meilleur.png" alt="Que le meilleur gagne" width="915" height="113" class="img-fluid"></p>
+            </div>
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-1 player-1 text-center">
-                    <p class="joueur1">J1</p>
+                <div class="col-10 col-sm-1 col-md-1 col-lg-1 player text-center mb-3 mb-sm-0 mb-md-0 mb-lg-0">
+                    <p class="joueur1 mt-1">J1</p>
                 </div>
-                <div id="game" class="col-10">
-                    <table class="grille-jeux">
+                <div id="game" class="col-12 col-sm-10 col-md-10 col-lg-10">
+                    <table class="grille-jeux shadow-lg">
                         <tr>
                             <td data-column="6" id='c00'></td>
                             <td data-column="0" id='c01'></td>
@@ -89,19 +115,23 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-1 player-1 text-center"> <p class="joueur2">J2</p></div>
+                <div class="resultat d-none"></div>
+                
+                <div class="col-10 col-sm-1 col-md-1 col-lg-1 player text-center mt-4 mt-sm-0 mt-md-0 mt-lg-0">
+                    <p class="joueur2 pt-1">J2</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="text-center pt-lg-3">
-        <button class="btn-go">
-            <p class="joueur pr-lg-4">GO</p>
-        </button>
+    <div class="container-fluid">
+        <div class="container text-center mt-4 mt-sm-4 mt-md-5 mt-lg-5">
+            <button class="btn-go" Onclick="javascript:window.history.go(0)">
+                <span class="joueur pr-lg-4 pl-lg-4">Recommencer la partie</span>
+            </button>
+        </div>
     </div>
 
-
-
-    <script src="js/random.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
