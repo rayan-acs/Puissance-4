@@ -198,7 +198,6 @@ function victoireDiag1() {
     } else if (joueurActif == 2) {
         couleur = 'jaune'
     }
-
     
     // sens / de haut en bas
     while (grille[ligne--][colonne++] == couleur && ligne >= 0 && colonne <= 6) {

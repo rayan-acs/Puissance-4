@@ -28,12 +28,13 @@
     <meta name="twitter:creator" content="Puiss4nce">
   
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>PUISS4NCE</title>
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+    <title>PUISS4NCE</title>
+    
     </head>
 
 <body class="bg-jv-blur">
@@ -44,17 +45,17 @@
             <span class="text-light font-weight-bold text-uppercase"></span>
         </a>
     </nav>
-        
+    
     <div class="container-fluid">
         <div class="container">
             <div class="text-center mt-4 mb-4 go">
-                <p><img src="../root/media/title-meilleur.png" alt="Que le meilleur gagne" width="915" height="113" class="img-fluid"</p>
-            </div>        
+                <p><img src="media/title-meilleur.png" alt="Que le meilleur gagne" width="915" height="113" class="img-fluid"></p>
+            </div>
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-1 player-1 text-center">
-                    <p class="joueur1">J1</p>
+                <div class="col-10 col-sm-1 col-md-1 col-lg-1 player text-center mb-3 mb-sm-0 mb-md-0 mb-lg-0">
+                    <p class="joueur1 mt-1">J1</p>
                 </div>
-                <div id="game" class="col-10">
+                <div id="game" class="col-12 col-sm-10 col-md-10 col-lg-10">
                     <table class="grille-jeux">
                         <tr>
                             <td data-column="6" id='c00'></td>
@@ -114,19 +115,23 @@
                         </tr>
                     </table>
                 </div>
-                <div class="col-1 player-1 text-center"> <p class="joueur2">J2</p></div>
+                <div class="resultat d-none"></div>
+                
+                <div class="col-10 col-sm-1 col-md-1 col-lg-1 player text-center mt-4 mt-sm-0 mt-md-0 mt-lg-0">
+                    <p class="joueur2 pt-1">J2</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="text-center pt-lg-3">
-        <button class="btn-go">
-            <p class="joueur pr-lg-4">GO</p>
-        </button>
+    <div class="container-fluid">
+        <div class="container text-center mt-4 mt-sm-4 mt-md-5 mt-lg-5">
+            <button class="btn-go" Onclick="javascript:window.history.go(0)">
+                <span class="joueur pr-lg-4 pl-lg-4">Recommencer la partie</span>
+            </button>
+        </div>
     </div>
 
-
-
-    <script src="js/random.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
