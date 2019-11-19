@@ -334,6 +334,8 @@ function gagner(item) {
     //partie html
     resultat.classList.toggle("d-none");
     resultat.innerHTML = '<h2> le joueur ' + item + 'gagne la partie </h2>';
+    document.querySelector(".azerty").classList.toggle("animation")
+    document.querySelector(".azerty").classList.toggle("circle")
 }
 
 function cptJeton(){
