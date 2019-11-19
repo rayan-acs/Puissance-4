@@ -32,7 +32,12 @@ td:hover{
     border-radius: 25px;
     box-shadow: 2px 4px rgba(27, 27, 27, 0.267) !important;
 }
-
+.resulj1{
+    font-family: 'Luckiest Guy';
+}
+.resulj2{
+    font-family: 'Luckiest Guy';
+}
 .joueur{
     font-family: 'Luckiest Guy', cursive;
     font-size: 25px;
@@ -112,5 +117,11 @@ td:hover{
     .joueur{
         font-size: 1.3rem;
         padding-top: 20px;
-    }      
+    }
+    .resulj1{
+        display: none;
+    }   
+    .resulj2{
+        display: none;
+    }   
 }
