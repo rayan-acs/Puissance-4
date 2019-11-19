@@ -81,10 +81,10 @@ td:hover {
 }
 
 .btn-go {
-  background-color: #FFC107 !important;
+  background-color: #ffc107 !important;
   box-shadow: 2px 2px rgba(27, 27, 27, 0.267) !important;
   border-radius: 15px;
-  width: 100px;
+  width: 80%;
   margin-top: 50px;
 }
 
